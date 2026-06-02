@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+
+    <style>
+        #timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 15px 25px;
+            margin: 10px;
+        }
+
+        .start {
+            background-color: green;
+        }
+
+        .stop {
+            background-color: red;
+        }
+
+        .reset {
+            background-color: orange;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="timer">
+        <h1 id="hours">00</h1>
+        <h1>:</h1>
+        <h1 id="minutes">00</h1>
+        <h1>:</h1>
+        <h1 id="seconds">00</h1>
+    </div>
+
+    <div class="btn-box">
+        <button id="startBtn" class="btn start" onclick="startTimer()">
+            Start
+        </button>
+
+        <button id="stopBtn" class="btn stop" onclick="stopTimer()">
+            Stop
+        </button>
+
+        <button id="resetBtn" class="btn reset" onclick="resetTimer()">
+            Reset
+        </button>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
