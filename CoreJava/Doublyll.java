@@ -11,6 +11,7 @@ public class Doublyll{
         m.deleteStart();
         m.deleteEnd();
         m.traversal();
+        m.deleteFromPosition(3);
         //System.out.println(m.head.prev+" "+m.head.data+" "+m.head.next+"\n"+m.tail.prev+" "+m.tail.data+" "+m.tail.next);
         //System.out.println(m.head.data+" "+m.head.next.data+" "+m.head.next.next.data+" "+m.head.next.next.next.data);
     }
@@ -122,5 +123,28 @@ class method{
         }
         head = head.next;
         head.prev =null;
+    }
+    void deleteFromPosition(int position) {
+
+        if (position == 1) {
+            deleteStart();
+            return;
+        }
+
+        Node temp = head;
+
+        for (int i = 1; i < position && temp != null; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null) return;
+
+        if (temp == tail) {
+            deleteEnd();
+            return;
+        }
+
+        temp.prev.next = temp.next;
+        temp.next.prev = temp.prev;
     }
     }
